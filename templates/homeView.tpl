@@ -16,16 +16,20 @@
 				<div class='folder-icon icon'></div>
 				<div class='text'>{{this}}</div>
 				<div class='delete-icon hidden-ele'></div>
+				<div class='edit-icon hidden-ele'></div>
+				<div class='forward-icon hidden-ele'></div>
 			</div>
 		{{/each}}
 		
 		<!-- List of root level bookmarks -->
 		{{#each root}}
 			<div class='tiles' data-type='B'>
-				<div class='fav-icon' style='background-image: url("//{{this.url}}/favicon.ico");	'></div>
+				<div class='fav-icon' style='background-image: url("//{{this.url}}/favicon.ico");'></div>
 				<div class='text'>{{this.title}}</div>
 				<div class='tool-tip hidden-ele'>{{this.url}}</div>
 				<div class='delete-icon hidden-ele'></div>
+				<div class='edit-icon hidden-ele'></div>
+				<div class='forward-icon hidden-ele'></div>
 			</div>			
 		{{/each}}
 	</div>

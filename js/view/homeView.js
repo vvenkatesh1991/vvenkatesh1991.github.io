@@ -45,17 +45,23 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 			if(type === 'N') {
 				$('#modal-section').html(this.popupTemplate({
 					header: 'Add a bookmark',
-					body: this.addPopupTemplate(),
-					buttonText: 'Add',
-					folders: Object.keys(this.folderLevelBookmarks)					
+					body: this.addPopupTemplate({
+						folders: Object.keys(this.folderLevelBookmarks)	 
+					}),
+					buttonText: 'Add'									
 				}));
 				$('#myModal').modal('show');
 			}
 			else if(type === 'F') {	
+				// Fetch the data for the particular folder.
+				var data = _.where(this.bookmarks, { 
+					folder: $target.find('.text').html()
+				});
 				$('#modal-section').html(this.popupTemplate({
-					header: 'Add a bookmark',
-					body: this.addPopupTemplate,
-					buttonText: 'Add',
+					header: 'Bookmarks in ' + $target.find('.text').html() + ' folder',
+					body: '',
+					data: data,
+					buttonText: 'Close',
 					folders: Object.keys(this.folderLevelBookmarks)					
 				}));
 				$('#myModal').modal('show');
