@@ -5,16 +5,17 @@
 	
 	<div class='tiles-container'>
 		<!-- Default add tile-->
-		<div class='tiles' data-type='N'>
+		<div class='tiles cursor-pointer ' data-type='N'>
 			<div class='add-icon icon'></div>
 			<div class='text'>{{labels.addBookmark}}</div>
 		</div>
 		
 		<!-- List of folders -->
 		{{#each folder}}
-			<div class='tiles' data-type='F'>
+			<div class='tiles cursor-pointer ' data-type='F'>
 				<div class='folder-icon icon'></div>
 				<div class='text'>{{this}}</div>
+				<div class='delete-icon hidden-ele'></div>
 			</div>
 		{{/each}}
 		
@@ -22,8 +23,12 @@
 		{{#each root}}
 			<div class='tiles' data-type='B'>
 				<div class='fav-icon' style='background-image: url("//{{this.url}}/favicon.ico");	'></div>
-				<div class='text'>{{this.url}}</div>
+				<div class='text'>{{this.title}}</div>
+				<div class='tool-tip hidden-ele'>{{this.url}}</div>
+				<div class='delete-icon hidden-ele'></div>
 			</div>			
 		{{/each}}
 	</div>
 </div>
+<!-- Section for the popup -->
+<div id='modal-section'></div>

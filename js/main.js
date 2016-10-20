@@ -5,7 +5,8 @@ require.config({
         'underscore': 'lib/underscore/underscore-min',
 		'backbone' : 'lib/backbone/backbone-min',
 		'handlebars' : 'lib/handlebars/handlebars',
-		'text' : 'lib/text/text'
+		'text' : 'lib/text/text',
+		'bootstrap' : 'lib/bootstrap/bootstrap'
     },
 	 backbone: {
       deps: ["use!underscore", "jquery"],
