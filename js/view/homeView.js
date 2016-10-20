@@ -1,4 +1,4 @@
-define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot + 'templates/homeView.tpl', 'collection/bookmarkCollection', 'model/staticModel', 'text!' + contextRoot + 'templates/popupTemplate.tpl', 'bootstrap'], function($, _, Backbone, Handlebars, template, bookmarks, labels, popup) {
+define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot + 'templates/homeView.tpl', 'collection/bookmarkCollection', 'model/staticModel', 'text!' + contextRoot + 'templates/popupTemplate.tpl', 'text!' + contextRoot + 'templates/addPopupTemplate.tpl', 'bootstrap'], function($, _, Backbone, Handlebars, template, bookmarks, labels, popup, addPopup) {
 	var homeView = Backbone.View.extend({
 		// Target view dom element
 		el: '#module-section',
@@ -14,6 +14,7 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 		initialize: function() {			
 			this.template = Handlebars.compile(template);
 			this.popupTemplate = Handlebars.compile(popup);
+			this.addPopupTemplate = Handlebars.compile(addPopup);
 			this.labels = new labels();
 			var bookmark = localStorage.getItem('bookmarks');
 			bookmark = JSON.parse(bookmark);
@@ -44,7 +45,16 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 			if(type === 'N') {
 				$('#modal-section').html(this.popupTemplate({
 					header: 'Add a bookmark',
-					body: '',
+					body: this.addPopupTemplate(),
+					buttonText: 'Add',
+					folders: Object.keys(this.folderLevelBookmarks)					
+				}));
+				$('#myModal').modal('show');
+			}
+			else if(type === 'F') {	
+				$('#modal-section').html(this.popupTemplate({
+					header: 'Add a bookmark',
+					body: this.addPopupTemplate,
 					buttonText: 'Add',
 					folders: Object.keys(this.folderLevelBookmarks)					
 				}));
