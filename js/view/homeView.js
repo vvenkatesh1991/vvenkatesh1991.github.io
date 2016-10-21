@@ -36,35 +36,45 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 			// Blur event to update folder name.
 			'blur .text-input' : 'onFolderNameBlur',
 			// Change event handlers.
-			'change .bookmark-folder' : 'onFolderChanged'
+			'change .bookmark-folder' : 'onFolderChanged',
+			// Validation handler.
+			'keyup .bookmark-title' : 'validateFields',
+			'keyup .bookmark-url' : 'validateFields'
 		},
 		
 		// Unbind events before binding to avoid multiple invocation.
-		initialize: function() {			
+		initialize: function() {	
+			// Initialize templates used.
 			this.template = Handlebars.compile(template);
 			this.popupTemplate = Handlebars.compile(popup);
 			this.addPopupTemplate = Handlebars.compile(addPopup);
 			this.movePopupTemplate = Handlebars.compile(movePopup);
+			// Initialize models and collections.
 			this.labels = new labels();
-			var bookmark = localStorage.getItem('bookmarks');
-			bookmark = JSON.parse(bookmark);
+			var bookmark = JSON.parse(localStorage.getItem('bookmarks'));			
 			this.bookmarks = new bookmarks(bookmark);
-			this.bookmarks = this.bookmarks.toJSON();			
-			this.render();
-			return this;
+			this.bookmarks = this.bookmarks.toJSON();
+			//Invoke render.
+			this.render();			
 		},
 		
 		// Renders the home screen.
-		render: function() {			
+		render: function() {
+			// Group collection data by folder name.
 			var data = _.groupBy(this.bookmarks, 'folder');
-			this.rootLevelBookmarks = data[""];
+			// Remove root level bookmarks and store in another variable.
+			this.rootLevelBookmarks = data[""];			
 			delete(data[""]);
+			// Set folder list for further use.
 			this.folderLevelBookmarks = data;
+			// Inject template to DOM.
 			$(this.el).html(this.template({
 				root: this.rootLevelBookmarks,
 				folder: Object.keys(this.folderLevelBookmarks),
 				labels: this.labels.toJSON()
 			}));
+			// Return this for chaining.
+			return this;
 		},
 		
 		// Event handler when a tile is clicked.
@@ -81,6 +91,8 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 					buttonText: 'Add'									
 				}));
 				$('#myModal').modal('show');
+				// User validation.
+				this.validateFields();
 			}
 			else if(type === 'F') {	
 				// Fetch the data for the particular folder.
@@ -92,7 +104,8 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 					body: '',
 					data: data,
 					buttonText: 'Close',
-					folders: Object.keys(this.folderLevelBookmarks)					
+					folders: Object.keys(this.folderLevelBookmarks),
+					folderName: $target.find('.text').html() 	
 				}));
 				$('#myModal').modal('show');
 			}			
@@ -168,7 +181,7 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 		
 		// Handler to move bookmarks into a folder.
 		onMoveClicked: function(e) {			
-			this.moveTarget = $(e.currentTarget).parents('.tiles').data('id');
+			this.moveTarget = $(e.currentTarget).parents('.tiles').data('id');			
 			$('#modal-section').html(this.popupTemplate({
 				header: 'Move a bookmark',
 				body: this.movePopupTemplate({
@@ -182,6 +195,7 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 		// Handler on click of move button.
 		onMoveBtnClicked: function() {
 			var moveTo = $('#move-folder').val();
+			moveTo = moveTo === 'Root level' ? '' : moveTo;
 			var moveID = this.moveTarget;
 			$.each(this.bookmarks, function() {
 				if (this.id == moveID) {
@@ -278,8 +292,62 @@ define(['jQuery', 'underscore', 'backbone', 'handlebars', 'text!' + contextRoot 
 		// Click handler for the inline icons in folder popup.
 		inlineIconsClicked: function(e) {
 			var $target = $(e.currentTarget);
-		}
+			var $parent = $target.parents('.dotted');
+			var icon = $target.data('icon');
+			var id = $parent.data('id');
+			// Delete icon.
+			if(icon === 'D') {
+				var result = confirm('Are you sure you want to delete the selected bookmark ?');
+				if (!result)
+					return;	
+				this.bookmarks = _.reject(this.bookmarks, function(item) {
+					return (item.id === id);
+				});
+				// Update local storage.
+				localStorage.setItem('bookmarks',JSON.stringify(this.bookmarks));				
+				// delete row.
+				$parent.remove();
+			}
+			else if(icon === 'E') {
+				this.editTarget = id;				
+				$('#modal-section').html(this.popupTemplate({
+					header: 'Edit bookmark',
+					body: this.addPopupTemplate({
+						folders: Object.keys(this.folderLevelBookmarks)	 
+					}),
+					buttonText: 'Edit'									
+				}));
+				$('.bookmark-title').val($parent.find('.list-data-one').html());
+				$('.bookmark-url').val($parent.find('.list-data-two').html());
+				$('.bookmark-folder').val($parent.data('folder'));
+				$('.modal-backdrop').remove();
+				$('#myModal').modal('show');
+			}
+			else if(icon === 'M') {
+				this.moveTarget = id;
+				var folderList = Object.keys(this.folderLevelBookmarks);
+				var index = folderList.indexOf($parent.data('folder'));
+				if (index > -1)	folderList.splice(index, 1);
+				folderList.unshift('Root level');
+				$('#modal-section').html(this.popupTemplate({
+					header: 'Move a bookmark',
+					body: this.movePopupTemplate({
+						folders: folderList
+					}),
+					buttonText: 'Move'									
+				}));
+				$('.modal-backdrop').remove();
+				$('#myModal').modal('show');
+			}
+		},
 		
+		// Handler to validate the add popup.
+		validateFields: function() {
+			if($('.bookmark-title').val() === '' || $('.bookmark-url').val() === '')
+				$('.popup-btn').prop('disabled', true);
+			else
+				$('.popup-btn').removeAttr('disabled');
+		}		
 	});
 	
 	return homeView;

@@ -9,7 +9,7 @@
 	  <div class="modal-body">
 		{{{body}}}	
 		{{#each data}}
-			<div class='row dotted'>
+			<div class='row dotted' data-id='{{this.id}}' data-folder='{{../folderName}}'>
 				<div class='fav-icon-small left' style='background-image: url("//{{resolveURL this.url}}/favicon.ico");'></div> 
 				<div class='left list-data-one'>{{this.title}}</div>
 				<div class='left list-data-two'>{{this.url}}</div>
@@ -20,7 +20,7 @@
 		{{/each}}
 	  </div>
 	  <div class="modal-footer">
-		<button id='{{buttonText}}-btn' type="button" class="btn btn-default" data-dismiss="modal">{{buttonText}}</button>
+		<button id='{{buttonText}}-btn' type="button" class="btn btn-default popup-btn" data-dismiss="modal">{{buttonText}}</button>
 	  </div>
 	</div>
   </div>

@@ -1,5 +1,7 @@
 // Created by Venkatesh. Handles the various routes in the application.
 require(['jQuery', 'underscore', 'backbone'], function($, _, Backbone) {
+	'use strict';
+	
 	var AppRouter = Backbone.Router.extend({
 		routes: {
 			"home": "showHomeScreen"      

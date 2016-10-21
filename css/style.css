@@ -68,6 +68,9 @@ body {
 	flex-direction: column;	
 	position: relative;
 }
+.tiles:hover {
+	border: 3px solid black;
+}
 .tiles:hover .text {
 	font-weight: bold;
 }
@@ -151,8 +154,7 @@ body {
 	cursor: pointer;
 }
 .modal-content {
-	width: 500px;
-    height: 400px;
+	width: 500px;    
 }
 .bookmark-title ,
 .bookmark-url,
@@ -178,9 +180,6 @@ body {
 }
 .list-data-two{
 		width: 55%;
-}
-.modal-body {
-	height: 200px;
 }
 .dotted {
 	line-height: 22px;
