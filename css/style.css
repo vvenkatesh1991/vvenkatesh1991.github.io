@@ -173,8 +173,11 @@ body {
 .bookmark-folder-name {
 	margin-left: 4px;
 }
-.list-data{
-		width: 45%;
+.list-data-one{
+		width: 25%;
+}
+.list-data-two{
+		width: 55%;
 }
 .modal-body {
 	height: 200px;
@@ -182,6 +185,7 @@ body {
 .dotted {
 	line-height: 22px;
     border-bottom: 1px dotted black;
+	padding-right: 20px;
 }
 .modal {
   text-align: center;
@@ -198,6 +202,36 @@ body {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
+}
+.delete-inline {
+	background: url("../images/delete-icon.png");
+	background-size: 100% 100%;
+	width: 15px;
+    height: 15px;
+    margin-top: 4px;
+	margin-right: 2px;
+    cursor: pointer;
+}
+.edit-inline {
+	background: url("../images/edit-icon.png");
+	background-size: 100% 100%;
+	width: 20px;
+    height: 20px;
+    margin-top: 1px;
+	margin-right: 2px;
+    cursor: pointer;
+}
+.move-inline {
+	background: url("../images/move-icon.png");
+	background-size: 100% 100%;
+	width: 20px;
+    height: 20px;
+    margin-top: 1px;
+	margin-right: 2px;
+    cursor: pointer;
+}
+.modal-title {
+	text-align: center;
 }
 @media (min-width: 768px) {
 	.modal-sm {

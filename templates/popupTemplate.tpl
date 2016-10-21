@@ -10,9 +10,12 @@
 		{{{body}}}	
 		{{#each data}}
 			<div class='row dotted'>
-				<div class='fav-icon-small left' style='background-image: url("//{{this.url}}/favicon.ico");'></div> 
-				<div class='left list-data'>{{this.title}}</div>
-				<div class='left list-data'>{{this.url}}</div>
+				<div class='fav-icon-small left' style='background-image: url("//{{resolveURL this.url}}/favicon.ico");'></div> 
+				<div class='left list-data-one'>{{this.title}}</div>
+				<div class='left list-data-two'>{{this.url}}</div>
+				<div class='right delete-inline inline-icon' data-icon='D' title='Delete this bookmark'></div>
+				<div class='right edit-inline inline-icon' data-icon='E' title='Edit this bookmark'></div>
+				<div class='right move-inline inline-icon' data-icon='M' title='Move this bookmark'></div>				
 			</div>
 		{{/each}}
 	  </div>
