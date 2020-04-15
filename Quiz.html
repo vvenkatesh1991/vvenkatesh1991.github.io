@@ -1,0 +1,217 @@
+<html>
+<head>
+<style>
+body{
+	font-size: 20px;
+	font-family: sans-serif;
+	color: #333;
+}
+.question{
+	font-weight: 600;
+}
+.answers {
+  margin-bottom: 20px;
+}
+.answers label{
+  display: block;
+}
+#submit, .ch{
+	font-family: sans-serif;
+	font-size: 20px;
+	background-color: #279;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+.con { margin-bottom : 25px;  margin-top : 25px;}
+.ch { width: auto; display: inline; }
+#submit:hover{
+	background-color: #38a;
+}
+.hide { display: none; }
+</style>
+
+</head>
+<body>
+<div class='con'>
+<div class='ch' data-cat='O'>Olympics</div>
+<div class='ch' data-cat='W'>World Cup</div>
+</div>
+<div id="quiz"></div>
+<button id="submit" class="hide">Submit Quiz</button>
+<div id="results"></div>
+
+<script>
+(function(){
+	const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+  const myQuestionsOlympics = [
+    {
+      question: "The first winter Olympics was held in which year?",
+      answers: {
+        a: "1926",
+        b: "1922",
+        c: "1924",
+				d: "None of these"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "The first Summer Olympics was held in which year?",
+      answers: {
+        a: "1900",
+        b: "1896",
+        c: "1902",
+				d: "None of these"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Which Colour represents Asia in Olympics ring?",
+      answers: {
+        a: "Red",
+        b: "Yellow",
+        c: "Green",
+        d: "None of these"
+      },
+      correctAnswer: "b"
+    }
+  ];
+
+	const myQuestionsWorldcup = [
+    {
+      question: "Who scored the first World Cup century in the inaugural 1975 edition, staged in England?",
+      answers: {
+        a: "Geoffrey Boycott",
+        b: "Dennis Amiss",
+        c: "Mike Brearley",
+				d: "None of these"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Which batsman, in the same match scored a painstaking 36 not out of 174 balls and batted throughout the 60 overs to remain not out?",
+      answers: {
+        a: "Abid Ali",
+        b: "Sunil Gavaskar",
+        c: "Gundappa Viswanath",
+				d: "Yashpal Sharma"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "In one of the World Cup classics which West Indian last wicket stand put on 64 in 14 overs to grab a miraculous victory over Pakistan?",
+      answers: {
+        a: "Clive Lloyd and Collis King",
+        b: "Deryck Murray and Andy Roberts",
+        c: "Viv Richards and Joel Garner",
+        d: "Gordon Greenidge and Michael Holding"
+      },
+      correctAnswer: "b"
+    }
+  ];
+
+  function buildQuiz(type){
+    // variable to store the HTML output
+    const output = [];
+
+		var element = document.getElementById("submit");
+		element.classList.remove("hide");
+
+		var myQ = null;
+		if(type == 'O')
+			myQ = myQuestionsOlympics;
+	  else {
+	  	myQ = myQuestionsWorldcup;
+	  }
+
+    // for each question...
+    myQ.forEach(
+      (currentQuestion, questionNumber) => {
+
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
+
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div>`
+        );
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
+
+  // Kick things off
+  //buildQuiz();
+	var elements = document.getElementsByClassName("ch");
+
+	var myFunction = function() {
+	    var attribute = this.getAttribute("data-cat");
+	    buildQuiz(attribute);
+	};
+
+	for (var i = 0; i < elements.length; i++) {
+	    elements[i].addEventListener('click', myFunction, false);
+	}
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+})();
+</script>
+</body>
+</html>
