@@ -1,0 +1,290 @@
+/* Wedding HTML5 Template */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .navbar .navbar-nav > li > a {
+        padding: 10px 12px;
+    }
+    .hexa-gap{
+        margin-left: 0 !important;
+    }
+    .hotel-ul li .hotel-desc .btn{
+        bottom: 20px;
+    }
+    .hotel-ul li:nth-child(1) ,.hotel-ul li:nth-child(2) {
+        margin-top: 10px;
+    }
+    .hotel-ul li .hotel-desc .btn {
+        bottom: 20px;
+    }
+}
+@media only screen and (max-width: 980px){
+    .hexa-gap{
+        margin-left: 0 !important;
+    }
+    .navbar .navbar-nav > li > a {
+        padding: 10px 11px;
+    }
+    .hotel-ul li:nth-child(1) ,.hotel-ul li:nth-child(2) {
+        margin-top: 10px;
+    }
+    .hotel-ul li .hotel-desc .btn {
+        bottom: 20px;
+    }
+}
+@media screen and (min-device-width: 1024px) and (max-device-width: 1199px) {
+    .hexagon{
+        width: 100%;
+        margin: -110px 0 0 0;
+    }
+    .hotel-bg {
+        padding: 50px 30px;
+    }
+    .hotel-bg .tag-line {
+        font-size: 2.88em;
+    }
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+    /* ADD YOUR CSS ADJUSTMENTS BELOW HERE */
+    .navbar-brand{
+        padding: 11px 5px !important;
+    }
+    .main-header .logo{
+        height: 55px;
+    }
+    .hexagon {
+        width: 100%;
+    }
+    .slider-banner {
+        min-height: 450px;
+    }
+    #slideshow img{
+        height: 100%!important;
+    }
+    .banner-content{
+        padding: 70px 0 60px;
+    }
+    .error-404 .banner-content{
+        padding: 100px 0 0;
+    }
+    .gallery-container:hover .btn-gallery{
+        bottom: 15px;
+    }
+    #gmap_canvas{
+        height: 500px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .navbar{
+        min-height: 70px;
+    }
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 5px;
+    }
+    .main-header .logo {
+        height: 60px;
+    }
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+        background-color: #EB2E4A;
+    }
+    .navbar-toggle{
+        background-color: #EB2E4A;
+        margin-top: 23px;
+        margin-bottom: 23px;
+        border: 0;
+    }
+    .navbar-inverse .navbar-toggle .icon-bar{
+        color:#222;
+    }
+    #Banner {
+        margin-top: 70px;
+        padding-bottom: 50px;
+    }
+    .main-banner:before {
+      height: 400px;
+    }
+    .main-banner{
+        height: 400px;
+    }
+    #fade-slider > li{
+        height: 400px;
+    }
+    .slider-banner{
+        min-height: 350px;
+    }
+    .banner-content{
+        padding:20px 0;
+    }
+    .error-404 .banner-content{
+        padding: 60px 0 0;
+    }
+    .navbar-fixed-top .navbar-nav > li > a{
+        display: table;
+        width: 100%;
+        padding: 7px 10px;
+    }
+    .navbar-nav > li > a > figure{
+        display: table-cell;
+        vertical-align: middle;
+        width: 60px !important;
+    }
+    .navbar-nav > li > a  > span{
+        display: table-cell;
+        vertical-align: middle;
+        width: auto;
+    }
+    .story-section {
+        padding: 20px 0;
+    }
+    .story-content.left,.story-content.right{
+        margin: 0;
+        margin-bottom:20px;
+    }
+    .story-date{
+        width:100px;
+    }
+    .story-content:before{
+        content: none!important;
+    }
+    .parallax-section{
+        background-size: cover;
+        background-position: center center;
+    }
+    .parallax-section h2{
+        font-size: 2em;
+    }
+    .blessus-wrap{
+        height: 430px;
+    }
+    .footer .footer-names h2{
+        font-size: 50px;
+    }
+    .footer .footer-name{
+        display: block;
+    }
+    .footer-heart {
+        margin: 20px 20px 0 30px;
+    }
+    .banner-text{
+        width: 300px;
+    }
+    .banner-content .names {
+        font-size: 3em;
+    }
+    #slideshow img{
+        height: 100%!important;
+    }
+    /*    .gallery-container ,.maids .friend{
+            position: relative;
+            margin-bottom: 20px;
+            width: 300px;
+            margin: 0 auto 10px;
+        }   */
+    .error-banner .banner-content {
+        padding: 70px 0 0;
+    }
+    .error-page-text{
+        font-size: 85px;
+    }
+    .error-line{
+        margin: 15px 0;
+        font-size: 30px;
+    }
+    .section-tagline {
+        padding: 15px 15px 0;
+    }
+    .couple-content.left .social,.couple-content.right .social{
+        position: absolute;
+        left:calc(50% - 40px);
+        top:-20px;
+    }
+    .couple-content .social a{
+        display: inline-block;
+    }
+    .couple-hex {
+        padding-top: 0px;
+    }
+    .hexagon{
+        margin: 0px auto;
+        display: block;
+    }
+    .hexagon.gap {
+        margin-left: auto;
+    }
+    .hexa-gap{
+        margin-left: 0 !important;
+    }
+    .story-section .met::before,.story-section .propose::before,.story-section .engage::before,.story-content.left:after,.story-content.right:after{
+        content: none;
+    }
+    .story-section .propose,.story-section .engage {
+        margin-top: 50px;
+    }
+    .demo{
+        padding: 50px 0;
+        text-align: center;
+        background-position: 35%;
+    }
+    .demo p{
+        margin: 20px 0 0 0;
+    }
+    .demo .btn-buy{
+        margin: 45px 0 0 0;
+    }
+    .by{
+        display: block !important;
+    }
+    .insta > li {
+        width: 33%;
+    }
+    .hotel-ul li {
+        padding: 0;
+        width: 100% !important;
+    }
+    .hotel-ul li:nth-child(1){
+        margin-top: 10px;
+    }
+    .hotel-bg {
+        padding: 40px 30px;
+    }
+    .hotel-bg .title {
+        font-size: 20px;
+    }
+    .hotel-bg .tag-line {
+        font-size: 2.5em
+    }
+    .hotel-desc h3{
+        font-size: 24px;
+    }
+    .hotel-ul li .hotel-desc {
+        padding: 5px 15px;
+    }
+    .hotel-container img{
+        min-height: 220px;
+    }
+    .hotel-ul li .hotel-desc .btn{
+        bottom: 20px;
+    }
+}
+@media only screen and (max-width: 599px){
+    .main-banner{
+        height: 300px;
+    }
+    .error-404 .main-banner{
+        height: 460px;
+    }
+    .banner-text{
+        width: 200px;
+    }
+    .banner-content .names {
+        font-size: 2.5em;
+    }
+    #Gallery .filter li a{
+        padding: 6px 12px;
+        margin: 0 0 5px 0;
+    }
+    #fade-slider > li{
+        height: 300px;
+    }
+    .insta > li {
+        width: 33%;
+    }
+}

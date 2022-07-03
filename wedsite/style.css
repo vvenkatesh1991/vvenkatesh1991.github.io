@@ -1,0 +1,2675 @@
+/* Wedding HTML5 Template */
+/************ TABLE OF CONTENTS ***************
+1. Fonts
+2. Reset
+3. Global
+4. Main Header
+5. Main banner
+6. Couple Section
+7. Parallax Section
+8. Event Section
+9. Love Story Section
+10. Timer Section
+11. Gallery Section
+12. Bless Us
+13. Maid Section
+14. Map Section
+15. RSVP Section
+16. Blog
+17. Footer
+18. Event Page 1
+19. Fade Banner
+20. 404 Page
+21. Blog Page
+22. Blog Page Sidebar
+23. Success & Error Messages
+24. Gift Section
+25. Hotel Accomodation Section
+26. Play Music
+27. Snow Fall
+
+**********************************************/
+
+@import 'https://fonts.googleapis.com/css?family=Raleway|Josefin+Sans|Varela+Round';
+/***
+
+====================================================================
+        Reset
+====================================================================
+
+ ***/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+}
+
+*:focus{
+    outline: none !important;
+}
+/* * {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}*/
+/***
+
+====================================================================
+        Global Settings
+====================================================================
+
+ ***/
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #fff;
+    background-color: #eb2e4a;
+}
+.navbar-nav > li > .dropdown-menu{
+    border:none;
+    border-top: 2px solid #eb2e4a;
+}
+.dropdown-menu > li > a {
+    padding: 10px 20px;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #222222;
+}
+ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
+#loadercontent{
+    background-size: contain !important;
+}
+body {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px;
+    color: #777777;
+    line-height: 24px;
+    background: #ffffff;
+}
+.body-bg{
+    background-color: #F1F4F5;
+}
+section{
+    overflow:hidden;
+    position: relative;
+}
+.section-padding {
+    padding: 50px 0;
+}
+.section-title {
+    color: #666;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 10px;
+}
+.section-title > span{
+    color:#eb2e4a;
+}
+.section-title.light,.section-tagline.light {
+    color: #f2f2f2;
+}
+.section-title:before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: #eb2e4a;
+    bottom: 0px;
+    left: calc(50% - 50px);
+}
+.section-title:after {
+    /*content: '';*/
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background: #eb2e4a;
+    bottom: -5px;
+    left: calc(50% - 60px);
+    border-radius: 30%;
+}
+.section-tagline {
+    font-size: 15px;
+    padding: 0px 200px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #eb2e4a;
+}
+a:hover,
+a:focus,
+a:visited {
+    color:#222;
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+/*=======================================
+   TYPOGRAPHY
+=========================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+    font-weight: normal;
+    margin: 0px;
+    background: none;
+    color:#555;
+}
+h1 {
+	font-size: 32px;
+        line-height: 42px;
+}
+h2 {
+	font-size: 30px;
+	line-height: 40px;
+}
+h3 {
+	font-size: 28px;
+	line-height: 38px;
+}
+h4 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+h5 {
+	font-size: 24px;
+	line-height: 30px;
+}
+h6 {
+	font-size: 22px;
+	line-height: 28px;
+}
+p {
+    position: relative;
+    line-height: 26px;
+    color: #777;
+}
+/*=======================================
+   /TYPOGRAPHY
+=========================================*/
+ul,
+li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.no-padding {
+    padding: 0;
+}
+.no-margin {
+    margin: 0;
+}
+.no-padding-right {
+    padding-right: 0!important;
+}
+.no-padding-left {
+    padding-left: 0!important;
+}
+.m-top-30 {
+    margin-top: 30px;
+}
+.disp-none {
+    display: none;
+}
+.lbl-text{
+    position: absolute;
+    top:-16px;
+    left: 0;
+    color:#f2f2f2;
+    font-weight: 100;
+    transition: all 1s ease-in-out;
+    color: #eb2e4a;
+}
+.btn{
+    position: relative;
+    font-family: 'Varela Round', sans-serif;
+    background: #eb2e4a;
+    color: #FFFFFF;
+    font-size: 14px;
+    border-radius: 0;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #FC516A;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.btn:hover, .btn:focus, .btn:active {
+    color: white;
+}
+.btn:hover:before, .btn:focus:before, .btn:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: #222;
+}
+.gototop{
+    opacity: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #EB2E4A;
+    text-align: center;
+    font-size: 1.6em;
+    background: #FFF;
+    color: #EB2E4A;
+    padding: 7px 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.gototop:hover{
+    opacity: 1!important;
+    color: #EB2E4A;
+}
+/***
+
+====================================================================
+        4. Main Header
+====================================================================
+
+***/
+
+.main-header {
+    position: relative;
+}
+.navbar-brand {
+    margin-left: 0!important;
+    padding: 9px 10px!important;
+    height: auto;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background: #eb2e4a;
+}
+.main-header .logo {
+    height: 60px;
+}
+.main-header .navbar {
+    border-top: 2px solid #eb2e4a;
+    border-radius: 0;
+    margin: 0;
+    min-height: 0;
+}
+.main-header .navbar-nav > li > a {
+    color: #f2f2f2;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-header .navbar-nav > li > a > figure > img {
+    position: absolute;
+    bottom: 0px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.main-header .navbar-nav > .active > a > figure > img {
+    position: absolute;
+    bottom: -32px;
+}
+.main-header .navbar-nav > li > a > figure {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    margin: 0 auto 5px;
+}
+.main-header .navbar-nav > .active > a,
+.main-header .navbar-nav > .active > a:hover,
+.main-header .navbar-nav > .active > a:focus {
+    color: #eb2e4a;
+    background-color: #080808;
+}
+.main-header .navbar-nav li a:hover figure > img {
+    bottom: -32px;
+}
+.navbar-nav > li > a {
+    padding: 10px 20px;
+    font-size: 12px!important;
+}
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse{
+    max-height: 240px;
+}
+
+/***
+
+====================================================================
+        5. Main banner
+====================================================================
+
+***/
+
+#Banner {
+    margin-top: 80px;
+}
+.main-banner {
+    position: relative;
+    background-image: url('../images/retina/banner/banner-3.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 580px;
+}
+.main-banner:before {
+    content: '';
+    background: RGBA(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+.banner-content {
+    color: #FFF;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 80px 0 60px;
+    z-index: 9;
+}
+.banner-content .names {
+    font-size: 5em;
+    color: #eb2e4a;
+}
+.banner-content .names {
+    color: #eb2e4a;
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 4em;
+    line-height: 1em;
+}
+.invite {
+    color: #FFF;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.names div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.names i {
+    font-size: 28px;
+    padding: 0 30px;
+}
+/***
+
+====================================================================
+        6. Couple Section
+====================================================================
+
+***/
+.couple-hex{
+    padding-top:54px;
+}
+.hexagon {
+    overflow: hidden;
+    visibility: hidden;
+    width: 260px;
+    height: 314px;
+    margin: -60px 0 0 0px;
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg);
+    cursor: pointer;
+    display: inline-block;
+}
+.hexagon-in1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+.hexagon-in2 {
+    width: 100%;
+    height: 100%;
+    padding: 0px 12px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background: #f1f4f5;
+    visibility: visible;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    display: table;
+}
+.about-content{
+    display: table-cell;
+    vertical-align: middle;
+}
+.hex-title{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.hex-title > span{
+    color: #EB2E4A;
+}
+.hexagon-in2 p {
+    position: relative;
+}
+.hexagon-in2.groom{
+    background-image: url('../images/retina/couple/groom.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.hexagon-in2.bride{
+    background-image: url('../images/retina/couple/bride.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.hexagon-in2 h4 span{
+    color:#EB2E4A
+}
+.hex-quote{
+    background: #EB2E4A;
+    color: #FFF;
+}
+.hex-quote h4{
+    font-size: 22px;
+    color: #FFF;
+    padding: 18px;
+}
+.hexa-gap {
+    margin-left: 160px;
+}
+.hex-social{
+    display: table;
+    margin: 6px auto;
+}
+.hex-social a {
+    background: #EB2E4A;
+    border-radius: 100%;
+    color: #FFF;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    top: 0;
+    left: 0;
+    outline: 0;
+}
+.hex-social a i{
+    height: 14px;
+    width:14px;
+    padding: 8px 0;
+}
+.bridegroom{
+    background: #FFF;
+}
+.couple-container {
+    margin-bottom: 20px;
+    padding: 20px 50px 0;
+}
+.couple-container:hover figure img{
+    transform: scale(1.1);
+}
+.couple-container h2 {
+    text-transform: capitalize;
+    font-size: 2.2em;
+    color:#222;
+}
+.couple-container h4 {
+    color: #eb2e4a;
+}
+.couple-container figure img{
+    width: 300px;
+    margin-bottom: 20px;
+    -webkit-transition: all 5s ease;
+    transition: all 5s ease;
+}
+.couple-container .name-container{
+    margin-top: -4px;
+    border-bottom: 4px solid #eb2e4a;
+    background: #FFF;
+    padding: 0 15px;
+}
+.couple-container .paragraph {
+    padding: 5px 0px;
+    text-align: justify;
+    margin: 0;
+}
+.couple-container .social {
+    margin-bottom: 5px;
+    display: table;
+    margin: 10px auto;
+}
+.couple-container .social a{
+    padding: 4px;
+    border: 1px solid;
+    display: inline-block;
+    margin-right: 5px;
+}
+.couple-container .social a:hover{
+    background: #222;
+    color: #FFF;
+}
+.couple-container .social a i{
+    color: #eb2e4a;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.couple-container figure {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+.story{
+    position: relative;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+    background-color: #ffffff;
+}
+
+.story:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    background: linear-gradient(to left, transparent 90%, #bbb 100%);
+}
+
+.story:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+    background: linear-gradient(to right, transparent 90%, #ccc 100%);
+    z-index: 1;
+}
+
+
+
+/***
+
+====================================================================
+        7. Parallax Section
+====================================================================
+
+***/
+
+.parallax-section {
+    position: relative;
+    background-position: center center !important;
+    background-size: cover !important;
+    background: url("../images/retina/general/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    text-align: center;
+}
+.parallax-section h2 {
+    padding: 100px 10%;
+    font-size: 3em;
+    color: #FFF;
+    line-height: 62px;
+}
+.parallax-section:before {
+    content: '';
+    background: RGBA(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.parallax-section h2 > span{
+    color:#eb2e4a;
+}
+/***
+
+====================================================================
+        8. Event Section
+====================================================================
+
+***/
+#EventsPage{
+    margin-top: 80px;
+}
+#Events {
+    background: url('../images/retina/events/event-bg.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#Events:before {
+    content: '';
+    background: RGBA(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.event-container {
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.event-container:hover .event-desc {
+    top: 0px;
+}
+.event-container.style-2 {
+    top: auto;
+}
+.event-container .event-image img{
+    margin: 0 auto;
+}
+.event-desc {
+    background: #222222;
+    color: #b3b3b3;
+    height: 100%;
+    position: absolute;
+    top: calc(100% - 48px);
+    overflow: auto;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.event-container .event-desc .event-detail{
+    margin: 10px 0;
+}
+/* Track */
+.event-desc::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.event-desc::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.event-desc::-webkit-scrollbar-thumb
+{
+    background-color: #EB2E4A;
+}
+
+.event-desc .event-name {
+    color: #FFF;
+    padding: 5px 0;
+    text-align: center;
+    background: #eb2e4a;
+    font-size: 24px;
+}
+.event-desc .event-name.black {
+    background: #222;
+    margin-bottom: 10px;
+}
+.event-desc .event-name.black:after {
+    content: '';
+    height: 2px;
+    width: 100px;
+    position: absolute;
+    background: #eb2e4a;
+    bottom: -2px;
+    left: calc(50% - 50px);
+}
+.event-desc .event-para {
+    padding: 10px 10px 0;
+}
+.event-desc .content {
+    display: block;
+    padding: 0px 10px;
+}
+.event-desc .content i {
+    color: #eb2e4a;
+    margin-right: 10px;
+}
+.style-2 .event-desc {
+    position: relative;
+    margin: 0 20px;
+    margin-top: -30%;
+    top: 0;
+}
+.style-2 .content {
+    text-align: center;
+    margin: 3px;
+}
+.style-2 .on-at {
+    text-align: center;
+    display: block;
+    color: #eb2e4a;
+    font-size: 20px;
+    margin: 3px;
+    font-family: 'Raleway', sans-serif;
+}
+/***
+
+====================================================================
+        9. Love Story Section
+====================================================================
+
+***/
+
+.story-section {
+    position: relative;
+    padding: 100px 0;
+}
+.story-line {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: #eb2e4a;
+    top: 0;
+    left: 50%;
+}
+.story-line .start {
+    margin-left: -16px;
+    top: 0;
+    position: absolute;
+}
+.story-line .end {
+    margin-left: -16px;
+    bottom: 0;
+    position: absolute;
+}
+.story-date {
+    background: #eb2e4a;
+    padding: 8px 15px;
+    display: inline-block;
+    border-radius: 20px;
+    width: 160px;
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 10px;
+}
+.story-content {
+    position: relative;
+    background: #f2f2f2;
+    padding: 10px;
+}
+.story-content.left {
+    margin-right: 30px;
+}
+.story-content.left:after{
+    content:'';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #F2F2F2;
+    top: 10px;
+    right: -10px;
+}
+.story-content.right {
+    margin-left: 30px;
+}
+.story-content.right:after{
+    content:'';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #F2F2F2;
+    top: 10px;
+    left: -10px;
+}
+.story-content h3 {
+    font-size: 24px;
+    text-transform: capitalize;
+    padding: 0 0 10px 0;
+    display: inline-block;
+    position: relative;
+}
+.story-content h3:before{
+    content: '';
+    height: 2px;
+    width: 30px;
+    background: #777777;
+    position: absolute;
+    bottom: 10px;
+}
+.story-content h3 > span {
+    color: #eb2e4a;
+}
+.story-content p{
+    margin-top: 10px;
+}
+.story-section .met:before {
+    content: '';
+    background-image: url('../images/retina/story/meet.png');
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: -16px;
+    top: 3px;
+}
+.story-section .propose {
+    margin-top: 100px;
+}
+.story-section .propose:before {
+    content: '';
+    background-image: url('../images/retina/story/propose.png');
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    left: -16px;
+    top: 3px;
+}
+.story-section .engage {
+    margin-top: -30px;
+}
+.story-section .engage:before {
+    content: '';
+    background-image: url('../images/retina/story/engage.png');
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: -16px;
+    top:3px;
+}
+
+/***
+
+====================================================================
+        10. Timer Section
+====================================================================
+
+***/
+section#timer{
+    overflow: visible;
+}
+#timer{
+    position: relative;
+    /*background: #f2f2f2;*/
+}
+.timer-icon{
+    position: relative;
+    height: 206px;
+    background-color: #eb2e4a;
+    text-align: center;
+    color: #fff;
+}
+.timer-icon img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.timer {
+    position: relative;
+    height: 205px;
+    background: url('../images/retina/general/timer-bg.jpg');
+    background-attachment: fixed;
+    background-origin: initial;
+    background-clip: initial;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: -50px;
+    z-index: 11;
+}
+.timer .layer-bg{
+    background-color: rgba(0, 0, 0, 0.90);
+}
+.counter-group {
+    margin: 0 auto;
+    display: inline-block;
+}
+.counter-group:before,
+.counter-group:after {
+    content: " ";
+    display: table;
+}
+.counter-group:after {
+    clear: both;
+}
+.counter-block {
+    position: relative;
+    float: left;
+    margin-right: 50px;
+    position:relative;
+}
+.counter-block:last-child{
+    margin-right: 15px;
+}
+.counter-block:after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    top: 30px;
+    right: -25px;
+    bottom: 30px;
+    background-color: #fff;
+}
+.counter-block:last-child:after{
+    display: none;
+}
+.counter-block .counter {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+}
+.counter-block .counter .number {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 1%;
+    width: 46%;
+    height: 98%;
+    color: #fff;
+    position: absolute;
+    font-size: 70px;
+    line-height: 170px;
+    top: -10000px;
+    text-shadow: 1px 2px 1px #000;
+}
+.counter-block .counter .number.tens {
+    left: 0;
+}
+.counter-block .counter .number.units {
+    left: 50%;
+}
+.counter-block .counter .number.hundreds {
+    display: none !important;
+}
+.counter-block .counter .number.show {
+    top: 0;
+    z-index: 2;
+}
+.counter-block .counter .number.hidden-down {
+    top: 100%;
+}
+.counter-block .counter .number.hidden-up {
+    top: -100%;
+    z-index: 100;
+}
+.counter-block .counter.with-hundreds {
+    width: 150px;
+}
+.counter-block .counter.with-hundreds .number {
+    width: 30.66%;
+}
+.counter-block .counter.with-hundreds .number.tens {
+    left: 33.33%;
+}
+.counter-block .counter.with-hundreds .number.units {
+    left: 66.66%;
+}
+.counter-block .counter.with-hundreds .number.hundreds {
+    display: block!important;
+    left: 0;
+}
+.counter-block .counter-caption {
+    padding: 10px 0;
+    color: #eb2e4a;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+@media (max-width: 1024px) {
+    .counter-group {
+        margin: 35px auto;
+    }
+    .counter-block {
+        margin-right: 50px;
+    }
+    .counter-block:after{
+        top: 0px;
+        bottom: 25px;
+    }
+    .counter-block .counter {
+        width: 100px;
+        height: 90px;
+        overflow: hidden;
+        font-weight: 700;
+    }
+    .counter-block .counter .number {
+        font-size: 70px;
+        font-weight: normal;
+        line-height: 90px;
+    }
+    .counter-block .counter.with-hundreds {
+        width: 150px;
+    }
+    .counter-block .counter-caption {
+        font-size: 12px;
+    }
+}
+@media (max-width: 991px) {
+    #timer{
+        margin-top: 0;
+    }
+    .timer{
+        height: auto;
+    }
+    .counter-group {
+        margin: 50px auto 20px;
+    }
+    .counter-block {
+        margin-right: 20px;
+    }
+    .counter-block:last-child{
+        margin-right: 0;
+    }
+    .counter-block:after{
+        top: 0;
+        right: -10px;
+        bottom: 35px;
+    }
+    .counter-block .counter {
+        width: 85px;
+        height: 80px;
+    }
+    .counter-block .counter .number {
+        font-size: 60px;
+        line-height: 72px;
+        font-weight: normal;
+    }
+    .counter-block .counter.with-hundreds {
+        width: 130px;
+    }
+    .counter-block .counter-caption {
+        font-size: 12px;
+    }
+}
+@media (max-width: 480px) {
+    .counter-block .counter {
+        width: 45px;
+        height: 50px;
+    }
+    .counter-block .counter .number {
+        font-size: 35px;
+        line-height: 50px;
+    }
+    .counter-block .counter.with-hundreds {
+        width: 70px;
+    }
+    .counter-block .counter-caption {
+        font-size: 70%;
+    }
+}
+
+/***
+
+====================================================================
+        11. Gallery Section
+====================================================================
+
+***/
+
+.gallery-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+.gallery-container:before {
+    background: RGBA(0, 0, 0, 0.20);
+    content:'';
+    position: absolute;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    border: 1px solid #ddd;
+    top: 10px;
+    left: 10px;
+}
+#Gallery .isotopeFilters {
+    display: table;
+    margin: 0px auto 30px;
+}
+#Gallery .filter li a{
+    display: inline-block;
+    border:2px solid #eb2e4a;
+    padding: 10px 20px;
+    margin: 0 10px 5px 0;
+    cursor: pointer;
+}
+#Gallery .filter li.active a{
+    background: #eb2e4a;
+    color: #FFF;
+}
+
+.gallery-container:hover .gallery-hover {
+    transform: scale(1);
+    background: rgba(34, 34, 34, 0.95);
+}
+.gallery-container:hover .btn-search {
+    opacity: 1;
+    bottom: 20px;
+}
+.gallery-container .item-desc{
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    position: absolute;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+}
+.gallery-container:hover .btn-share {
+    opacity: 1;
+    bottom: 20px;
+    left: 68px;
+}
+.gallery-hover {
+    background: rgba(34, 34, 34, 0.9);
+    color: #FFF;
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    top: 10px;
+    left: 10px;
+    padding: 20px;
+    transform: scale(0);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.gallery-hover h5 {
+    margin: 5px 0;
+    color: #FFF;
+}
+.gallery-hover h5::first-letter {
+    color: #eb2e4a;
+}
+.gallery-hover .btn-gallery {
+    border: 1px solid #eb2e4a;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    bottom: 0;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.gallery-hover .btn-gallery:hover {
+    background: #eb2e4a;
+}
+.gallery-hover .btn-search {
+    transition-delay: 0.3s;
+}
+.gallery-hover .btn-share {
+    transition-delay: 0.5s;
+}
+/***
+
+====================================================================
+        12. Bless Us
+====================================================================
+
+***/
+
+.blessus {
+    position: relative;
+    background: url('../images/retina/bless/bless-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+.blessus:before {
+    content: '';
+    background: RGBA(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.blessus blockquote {
+    font-size: 16px;
+    border-left: none;
+    text-align: center;
+    margin: 0 10px;
+    padding: 80px 15px 40px;
+}
+.blessus blockquote footer{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 90%;
+    font-weight: bold;
+    color: #FFF;
+}
+.blessus form {
+    padding: 50px 20px;
+    background: #262626;
+}
+.blessus .form-group {
+    margin-bottom: 40px;
+    position: relative;
+}
+.blessus .lbl-text{
+    left: 15px;
+}
+.blessus .form-control:focus,
+.blessus .form-control:active,
+.blessus .form-control:visited {
+    box-shadow: none;
+    border-bottom: 2px solid #eb2e4a;
+}
+.blessus .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #DDD;
+    border-radius: 0;
+    font-size: 16px;
+    color: #FFF;
+    padding: 0;
+}
+.blessus input.form-control {
+    height: 40px;
+}
+.blessus .btn-bless {
+    background: #eb2e4a;
+    color: #FFFFFF;
+    width: 50%;
+    border-radius: 0;
+}
+.wish {
+    margin-top: 20px;
+}
+.blessus .carousel-indicators {
+    position: relative;
+    bottom: 10px;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    padding-left: 0;
+    margin: 20px auto;
+    text-align: center;
+    list-style: none;
+}
+.carousel-inner .item p:before {
+    color: #eb2e4a;
+    font-family: FontAwesome;
+    content: '\f10d';
+    font-size: 1.5em;
+    line-height: 0.1em;
+    vertical-align: 0em;
+    padding-right: 15px;
+}
+.carousel-inner .item p {
+    line-height: 36px;
+    color: #f2f2f2;
+}
+
+.blessus-wrap {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
+.bless-flipcard {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+}
+.bless-flipcard .bless-carousel,
+.bless-flipcard .bless-form{
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.bless-flipcard .bless-carousel {
+    background: #222;
+}
+.bless-flipcard .bless-form {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+.bless-flipcard.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+.btn-flip{
+    transform: none;
+    padding: 6px 7px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    z-index: 99;
+}
+.btn-flip:before{
+    background: none;
+}
+
+
+/***
+
+====================================================================
+        13. Maid Section
+====================================================================
+
+***/
+
+.maids {
+    position: relative;
+    background: #F2F2F2;
+}
+.maids .friend {
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-bottom: 3px solid #eb2e4a;
+}
+.maids .friend img {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.maids .friend:hover img {
+    transform: scale(1.1);
+}
+.maids .friend .name {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #FFF;
+}
+.maids .friend .name h2 {
+    display: inline-block;
+    font-size: 1.8em;
+    color: #FFF;
+    background: #eb2e4a;
+    width: 65%;
+    text-align: center;
+    padding: 6px;
+
+}
+.maids .friend .name small {
+    color: #222;
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+.maids .friend .social {
+    position: absolute;
+    top: calc(50% - 16px);
+    left: 73%;
+}
+.maids .friend .frnd-social {
+    color: #222;
+    padding: 4px;
+    border: 1px solid;
+    display: inline-block;
+    margin-right: 5px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.maids .friend .frnd-social i {
+    color: #222;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.maids .friend .social a:hover {
+    background:  #222222;
+}
+.maids .friend .social a:hover i{
+    color: #eb2e4a;
+}
+
+/***
+
+====================================================================
+        14. Map Section
+====================================================================
+
+***/
+
+#gmap_canvas{
+    height:250px;
+    width:100%;
+}
+.map-area{
+    background: #eb2e4a;
+    color: #FFF;
+}
+.map-area .title{
+    color: #FFF;
+    padding: 5px 0;
+}
+.map-area p{
+    color: #DDD;
+}
+.map-area .title small{
+    color: #FFF;
+}
+.map-address >p{
+    color: #DDD;
+}
+/***
+
+====================================================================
+        15. RSVP Section
+====================================================================
+
+***/
+
+.rsvp {
+    position: relative;
+    background: url(../images/retina/rsvp.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.rsvp:before {
+    content: '';
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.rsvp form {
+    margin-top: 30px;
+}
+.rsvp .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+.rsvp input.form-control,
+.rsvp textarea.form-control,
+.rsvp select.form-control {
+    border: none;
+    border-bottom: 2px solid #999;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    font-size: 16px;
+    background: transparent;
+}
+.rsvp .form-control .cs-placeholder{
+    background: transparent;
+}
+.rsvp input.form-control,
+.rsvp select.form-control {
+    height: 40px;
+}
+.rsvp .btn {
+    background: #eb2e4a;
+    color: #FFFFFF;
+    border-radius: 0;
+}
+.rsvp .form-control:focus,
+.rsvp .form-control:active,
+.rsvp .form-control:visited {
+    box-shadow: none;
+    border-bottom: 2px solid #eb2e4a;
+}
+.cs-skin-elastic > span{
+    font-size: 17px;
+    color: #939393;
+}
+/***
+
+====================================================================
+        16. Blog
+====================================================================
+
+***/
+.blog{
+    background: #f2f2f2;
+}
+.blog-container{
+    background: #FFF;
+    margin-bottom: 10px;
+}
+.blog-img{
+    padding: 5px;
+}
+.blog-img img{
+    margin: 0 auto;
+}
+.blog-desc{
+    padding: 10px;
+    position: relative;
+}
+.blog-desc .title{
+    color: #222;
+    padding: 5px 0;
+}
+.blog-date{
+    position: absolute;
+    text-align: center;
+    top: -33px;
+    right: 10px;
+}
+.blog-date .date{
+    width: 50px;
+    display: block;
+    background: #eb2e4a;
+    color: #FFF;
+    padding: 2px;
+
+}
+.blog-date .month{
+    width: 50px;
+    display: block;
+    background: #222;
+    color: #DDD;
+    padding: 2px;
+    text-transform: uppercase;
+}
+.by span{
+    color: #eb2e4a;
+    margin-left: 5px;
+}
+.blog-desc p{
+    font-size: 14px;
+    margin-top: 5px;
+    color: #939393;
+    line-height: 22px;
+}
+.blog-container .btn-more{
+    background: #eb2e4a;
+    color: #FFF;
+    border-radius: 0;
+    outline: 0;
+    margin: 0 auto;
+    display: table;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+/***
+
+====================================================================
+        17. Footer
+====================================================================
+
+***/
+
+.footer{
+    position: relative;
+    background: url("../images/retina/general/bg.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+.footer:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.footer .footer-names {
+    padding-top: 50px;
+    text-align: center;
+}
+.footer .footer-names h4 {
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+.footer .footer-names h4 > span{
+    color: #eb2e4a;
+}
+.footer .footer-names h2 {
+    font-family: Raleway, sans-serif;
+    font-size: 70px;
+    text-align: center;
+    padding-top: 10px;
+}
+.footer .footer-name {
+    display: inline-block;
+}
+.footer .footer-name.groom,
+.footer .footer-name.bride{
+    color: #FFFFFF;
+}
+.footer-heart {
+    margin: 0 20px 0 30px;
+    width: 100px;
+}
+.footer .footer-copyright span {
+    background: #222;
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    color:#FFF;
+}
+.footer .footer-groom {
+    display: table;
+}
+.footer #instafeed{
+    margin: 30px 0 50px;
+    text-align: center;
+}
+#instafeed li{
+    display: inline-block;
+}
+.footer #instafeed a img{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    margin: 0 5px;
+    border: 2px solid #eb2e4a;
+}
+/***
+
+====================================================================
+        18. Event Page 1
+====================================================================
+
+***/
+section.page{
+    padding-bottom: 40px;
+}
+.section-banner{
+    position: relative;
+    padding: 80px 0;
+    background-size: cover;
+    background-position: center center;
+}
+.section-banner:before{
+    content: '';
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.section-banner h1{
+    text-align: center;
+    color: #FFF;
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 1px 1px 0px #000;
+    font-size: 3em;
+}
+/***
+
+====================================================================
+        19. Fade Banner
+====================================================================
+
+***/
+
+#fade-slider > li{
+    background-size: cover;
+    background-position: center;
+    height: 580px;
+}
+
+.sy-controls{
+    display: block;
+}
+
+/* keyframes #anim_slides */
+@-webkit-keyframes anim_slides {
+    0% {
+        opacity:0;
+    }
+    6% {
+        opacity:1;
+    }
+    24% {
+        opacity:1;
+    }
+    30% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@-moz-keyframes anim_slides {
+    0% {
+        opacity:0;
+    }
+    6% {
+        opacity:1;
+    }
+    24% {
+        opacity:1;
+    }
+    30% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+.slides ul li {
+    opacity:0;
+    position:absolute;
+    top:0;
+
+    /* css3 animation */
+    -webkit-animation-name: anim_slides;
+    -webkit-animation-duration: 24.0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-delay: 0;
+    -webkit-animation-play-state: running;
+    -webkit-animation-fill-mode: forwards;
+
+    -moz-animation-name: anim_slides;
+    -moz-animation-duration: 24.0s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: normal;
+    -moz-animation-delay: 0;
+    -moz-animation-play-state: running;
+    -moz-animation-fill-mode: forwards;
+}
+
+/* css3 delays */
+.slides ul  li:nth-child(2){
+    -webkit-animation-delay: 6.0s;
+    -moz-animation-delay: 6.0s;
+}
+.slides ul  li:nth-child(3){
+    -webkit-animation-delay: 12.0s;
+    -moz-animation-delay: 12.0s;
+}
+
+.slides ul li img {
+    display:block;
+}
+
+/***
+
+====================================================================
+        20. 404 Page
+====================================================================
+
+***/
+
+/*.error-banner{
+    background-image: url("../images/retina/banner/banner-3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}*/
+
+.error-page-text{
+    font-family: 'Raleway', sans-serif;
+    font-size: 130px;
+    color: #eb2e4a;
+}
+
+.error-page-text i{
+    vertical-align: middle;
+}
+
+.error-line{
+    margin: 50px auto;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+
+.error-btn{
+    background: #eb2e4a;
+    width: 200px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF !important;
+    border-radius: 0;
+}
+
+.error-btn:hover{
+    color: #ffffff;
+}
+
+/***
+
+====================================================================
+        21. Blog Page
+====================================================================
+
+***/
+
+.section-banner.blog{
+    background-image: url("../images/retina/general/bg.jpg");
+    background-position: center center;
+}
+.inner-banner .banner-content{
+    padding: 70px 0 0;
+}
+.page-title{
+    font-size: 70px;
+    color: #eb2e4a;
+}
+.blog-detail-content{
+    padding: 50px 0 20px;
+}
+.blog-detail,
+.comments-wrap{
+    background-color: #ffffff;
+    padding: 15px;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.blog-detail-img{
+    position: relative;
+}
+
+.blog-detail-img .blog-date{
+    top: -28px;
+}
+
+.blog-detail-desc{
+    padding: 15px 0;
+}
+
+.blog-detail-desc .title{
+    color: #262626;
+}
+
+.tags li{
+    position: relative;
+    padding: 0 0 0 5px;
+}
+
+.tags li:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: ",";
+    font-size: 14px;
+    color: #777777;
+}
+
+.tags li:first-child:after,
+.tags li:nth-child(2):after{
+    display: none;
+}
+
+.tags li a:hover{
+    color: #000;
+}
+
+.blog-detail-desc p{
+    text-align: justify;
+    color: #939393;
+}
+
+.blog-detail-desc hr{
+    border-top: 1px solid #eb2e4a;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.blog-detail-footer{
+    padding-top: 15px;
+    border-top: 1px dotted #b3b3b3;
+}
+
+.blog-likes,
+.blog-social{
+    margin: 0;
+}
+
+.blog-likes li i{
+    width: 20px;
+    color: #eb2e4a;
+}
+
+.blog-social li{
+    padding: 0 0 0 5px;
+}
+
+.blog-social li a i{
+    width: 25px;
+    height: 25px;
+    background-color: #eb2e4a;
+    text-align: center;
+    line-height: 25px;
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+.author-detail{
+    background-color: #eb2e4a;
+    padding: 15px;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.author-detail p{
+    color:#DDD;
+}
+.blog-writer{
+    color: #262626;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.author-detail .blog-social li{
+    padding: 0 5px 0 0;
+}
+
+.author-detail .blog-social li a i{
+    background-color: #f1f4f5;
+    color: #eb2e4a;
+}
+
+.related{
+    padding: 0 0 70px;
+}
+
+.comment{
+    padding: 15px;
+    background-color: #F5F5F5;
+    border: 1px dashed #DDD;
+    margin-bottom: 30px;
+}
+.comment .comment{
+    background-color: #FFF;
+}
+.comment .comment:last-child{
+    margin-bottom: 0;
+}
+.comment-writer{
+    color: #080808;
+    font-size: 14px;
+}
+.comment .blog-date{
+    top: -44px;
+    right: 15px;
+}
+
+.comment img{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.comment-text{
+    margin: 5px 0;
+}
+.comment-form{
+    background-color: #262626;
+    padding: 15px 30px 30px;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.comment-form .blog-detail-desc .title{
+    color: #FFFFFF;
+}
+
+.comment-form .form-group{
+    margin: 15px 0 30px;
+    position: relative;
+}
+
+.comment-form input.form-control{
+    height: 40px;
+}
+.comment-form .form-control{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #DDD;
+    border-radius: 0;
+    font-size: 16px;
+    color: #FFF;
+    padding: 0;
+    box-shadow: none;
+}
+.comment-form .form-control:focus{
+    box-shadow: none;
+}
+.owl-theme .owl-controls .owl-nav [class*=owl-]{
+    background: #222;
+    color: #FFF;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.owl-theme .owl-controls .owl-nav [class*=owl-].disabled{
+    background: #FFF;
+    color: #999;
+    cursor: default;
+}
+/***
+
+====================================================================
+        22. Blog Page Sidebar
+====================================================================
+
+***/
+
+.widget{
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.widget-title{
+    display: inline-block;
+    padding-bottom: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    border-bottom: 2px solid #eb2e4a;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.widget-title > span{
+    color:#eb2e4a;
+}
+.widget.about > img{
+    margin: 0 auto;
+    display: table;
+}
+.widget.about .about-name{
+    color: #262626;
+    margin: 10px 0 0;
+}
+.tag-list{
+    margin: 0;
+}
+.tag-list > li{
+    padding: 0;
+}
+.tag-list > li > a{
+    position: relative;
+    display: inline-block;
+    background-color: #eb2e4a;
+    padding: 1px 5px 1px 20px;
+    color: #FFF;
+    margin-bottom: 3px;
+}
+.tag-list > li > a:before{
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    content: "\f004";
+    font-family: FontAwesome;
+    font-size: 9px;
+    color: #FFF;
+    transform: rotate(-25deg);
+}
+.insta{
+    margin: 0;
+}
+.insta > li{
+    width: 49%;
+    padding: 0 2px;
+}
+.insta > li img{
+    margin: 0 auto;
+    display: table;
+}
+.post-list > li{
+    position: relative;
+    padding: 0 0 0 25px;
+    border-bottom: 1px dashed #DDD;
+}
+.post-list > li:before{
+    position: absolute;
+    top: 7px;
+    left: 0;
+    content: "\f184";
+    font-family: FontAwesome;
+    color: #262626;
+}
+.post-list > li > a{
+    position: relative;
+    display: block;
+    padding: 7px 0;
+    font-size: 17px;
+}
+#container{
+    height:540px!important;
+    overflow: hidden;
+}
+.grid-sizer { width: 25%; }
+.gallery-item { width: 25%;padding:5px; }
+
+@media screen and (max-width: 1224px) {
+    .grid-sizer { width: 33.33%; }
+    .gallery-item  { width: 33.33%; }
+}
+
+@media screen and (max-width: 720px) {
+    .grid-sizer { width: 50%; }
+    .gallery-item  { width: 50%; }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-sizer { width: 100%; }
+    .gallery-item  { width: 100%; }
+}
+
+
+/***
+
+====================================================================
+        23. Success & Error Messages
+====================================================================
+
+***/
+
+.error{
+    color: #FC516A;
+    font-weight: normal;
+}
+
+.modal-open{
+    padding-right: 0 !important;
+}
+
+.successMessage .modal-content{
+    color: #fff;
+    text-align: center;
+    border: 0;
+    box-shadow: 0 9px 21px 0 rgba(0, 0, 0, 0.65);
+}
+
+.successMessage .modal-content{
+    background-color: #6ABC6E;
+}
+
+.successMessage .modal-content p{
+    margin: 0;
+    font-size: 17px;
+}
+
+.successMessage .close{
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 15px;
+    color: #fff;
+    text-shadow: none;
+    opacity: 1;
+    z-index: 1;
+    position: absolute;
+    top: -15px;
+    right: -25px;
+}
+
+.successMessage .modal-dialog{
+    margin: 125px auto 0;
+}
+
+/***
+
+====================================================================
+        24. Demo Page
+====================================================================
+
+***/
+
+.demo{
+    background-image: url('../images/retina/banner/demo-banner.jpg');
+}
+
+.demo.section-banner:before{
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.demo h1{
+    margin: 20px 0 0 75px;
+    color: #FC516A;
+    font-size: 49px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-shadow: none;
+}
+
+.demo .btn-buy{
+    text-transform: uppercase;
+    margin: 45px 0 0 175px;
+}
+
+.demo-block{
+    position: relative;
+    background-color: #FFFFFF;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.home-demo{
+    height: 400px;
+}
+
+.home-demo img{
+    transition: all 5s ease;
+}
+
+.demo-desc{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #eb2e4a;
+    padding: 10px 15px 15px;
+    text-align: center;
+    transform: translateY(60px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.demo-desc h4{
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.home-demo:hover img{
+    transform: translateY(-800px);
+}
+
+.btn-more{
+    background: #eb2e4a;
+    color: #FFFFFF !important;
+    border-radius: 0;
+    outline: 0;
+    margin: 0 auto;
+    display: table;
+    font-size: 14px;
+}
+
+.demo-block:hover .demo-desc{
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: translateY(0);
+}
+
+.page-demo{
+    height: 250px;
+}
+
+.buy-wrap{
+    background-color: #ffffff;
+    margin-top: 30px;
+}
+
+.buy-prom{
+    position: relative;
+    background-color: #f1f4f5;
+    padding: 50px 15px 70px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+    margin: 25px 0;
+    z-index: 1;
+}
+
+.buy-prom:before{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: -10px;
+    left: -10px;
+    content: "";
+    border: 1px solid #262626;
+}
+
+.buy-prom:after{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: 10px;
+    left: 10px;
+    content: "";
+    border: 1px solid #FC516A;
+    z-index: -1;
+}
+
+.buy-prom h1{
+    font-size: 3.2em;
+    margin-bottom: 25px;
+}
+
+.buy-prom h1 > span{
+    color: #eb2e4a;
+}
+
+.buy-prom p{
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+/***
+
+====================================================================
+        24. Gift Section
+====================================================================
+
+***/
+.gift-container{
+    position: relative;
+    margin-bottom: 15px;
+    border: 5px solid #f2f2f2;
+    text-align: center;
+}
+.gift-container:hover .gift-desc{
+    background: rgba(235, 46, 74, 0.99);
+}
+.gift-container:hover .gift-img img{
+    transform: scale(1.1);
+}
+.gift-container:hover .gift-desc i,.gift-container:hover .gift-desc i{
+    color:#FFF;
+}
+.gift-container:hover .btn{
+    background: #222;
+}
+.gift-container .gift-img{
+    position: relative;
+    overflow: hidden;
+}
+.gift-container .gift-img img{
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.gift-container .gift-desc{
+    position: absolute;
+    top:0;
+    left:0;
+    background: RGBA(0, 0, 0, 0.8);
+    width:100%;
+    height: 100%;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.gift-container .gift-desc .gift-table{
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.gift-container .gift-desc .gift-content{
+    display: table-cell;
+    vertical-align: middle;
+}
+.gift-container .gift-desc i{
+    color:#eb2e4a;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.gift-container .gift-desc h2{
+    color:#FFF;
+    margin: 10px 0 15px 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+/***
+
+====================================================================
+        25. Hotel Accomodation Section
+====================================================================
+
+***/
+.hotel-bg{
+    background: #EB2E4A;
+    padding: 78px 30px;
+}
+.hotel-bg h1,.hotel-bg h2,.hotel-desc h3{
+    color:#FFF;
+}
+.hotel-desc p{
+    color:#DDD;
+}
+.hotel-bg i{
+    color: #FFF;
+    text-align: center;
+    display: block;
+    margin: 20px 0;
+}
+.hotel-bg .title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+}
+.hotel-bg .tag-line{
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.6em;
+    line-height: 1.5em;
+    text-align: center;
+    padding: 10px;
+}
+.hotel-ul li{
+    padding: 0;
+    float: left;
+}
+.hotel-ul li:nth-child(1) {
+    width: calc(50% - 5px);
+    margin:0 10px 10px 0;
+}
+.hotel-ul li:nth-child(2) {
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
+}
+.hotel-ul li:nth-child(3) {
+    width: 100%;
+}
+.hotel-ul li .hotel-container{
+    position: relative;
+    overflow: hidden;
+}
+.hotel-container:hover .hotel-desc .btn{
+    bottom:20px;
+
+}
+.hotel-ul li .hotel-container:before{
+    content: '';
+    background: RGBA(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.hotel-ul li .hotel-desc{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    padding: 15px;
+}
+.hotel-ul li .hotel-desc .btn{
+    bottom: -100px;
+    position: absolute;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+/***
+
+====================================================================
+        26. Play Music
+====================================================================
+
+***/
+.play {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid #EB2E4A;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    position: fixed;
+    bottom: 20px;
+    z-index: 99;
+    left: 20px;
+}
+.play:before {
+  content: '';
+    position: absolute;
+    top: -25px;
+    left: -45px;
+    bottom: -25px;
+    right: -5px;
+    border-radius: 50%;
+    border: 5px solid #EB2E4A;
+    z-index: 2;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+}
+.play:after {
+  content: '';
+    opacity: 0;
+    transition: opacity 0.6s;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+}
+.play:hover:before, .play:focus:before {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+}
+.play.active {
+  border-color: transparent;
+}
+.play.active:after {
+    content: '';
+    opacity: 1;
+    width: 20px;
+    height: 25px;
+    background: #EB2E4A;
+    position: absolute;
+    right: 10px;
+    top: -12px;
+    border-left: 7px solid #EB2E4A;
+    box-shadow: inset 6px 0 0 0 RGBA(0, 0, 0, 0.7);
+}
+/***
+
+====================================================================
+        27. Snow Fall
+====================================================================
+
+***/
+#snow{
+    position: fixed;
+    left: 70px;
+    bottom: 10px;
+    border:5px solid #EB2E4A;
+    height:50px;
+    width:50px;
+    border-radius: 100%;
+    padding: 4px;
+}
+#snow:after{
+    content: '';
+    position: absolute;
+    height: 45px;
+    width: 5px;
+    background: #EB2E4A;
+    left: 18px;
+    top: -5px;
+    transform: rotate(50deg);
+}
+#snow.active:after{
+    content: none;
+}
+.disp-none{
+    display: none;
+}
+.disp-block{
+    display: block;
+}
+.hexagon-in2.groom {
+  background-image: url(muthuvel.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.hexagon-in2.bride {
+  background-image: url(vandana.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.up-icon {
+  background-image: url(up.png);
+  background-size: 100% 100%;
+  width: 20px;
+    height: 20px;
+    margin-left: 9px;
+}
+p:before {
+  display: none;
+}
