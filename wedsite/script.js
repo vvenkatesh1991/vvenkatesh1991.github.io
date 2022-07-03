@@ -48,7 +48,7 @@ $(document).ready(function() {
     /* Initialize Mb Comming Soon */
     var countdown = $("#myCounter");
     if (countdown.length) {
-        $(countdown).mbComingsoon({expiryDate: new Date(2022, 7, 9, 10, 00), speed: 100});
+        $(countdown).mbComingsoon({expiryDate: new Date(2022, 6, 9, 18, 00), speed: 100});
         [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
             new SelectFx(el);
         });
