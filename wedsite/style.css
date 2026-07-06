@@ -2655,13 +2655,13 @@ section.page{
 }
 .hexagon-in2.groom {
   background-image: url(FS-13.jpg);
-  background-position: center;
+  background-position: 65% center;
   background-size: cover;
 }
 .hexagon-in2.bride {
   background-image: url(FS-3.jpg);
-  background-position: center;
-  background-size: cover;
+  background-position: 49% 80%;
+  background-size: auto 135%;
 }
 .up-icon {
   background-image: url(up.png);
